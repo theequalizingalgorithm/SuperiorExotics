@@ -251,7 +251,6 @@ Design goal:
       text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
-    /* Featured center area */
     .featured-area {
       text-align: center;
       display: flex;
@@ -286,14 +285,6 @@ Design goal:
       background: #ffe070;
     }
 
-    /*
-      Bottom section rules:
-      - Premium Flavored Vapes is left aligned and reduced by 10%.
-      - The block is pulled upward to tighten the gap under Pink Leopard.
-      - Premium image scaling is locked to a horizontal banner shape so it cannot blow up/crop into a giant vertical block.
-      - Hot Vape Summer remains centered at 60%.
-      - Bored Ape stays small and centered below.
-    */
     .bottom-showcase {
       width: 100%;
       margin: -180px auto 0;
@@ -315,8 +306,8 @@ Design goal:
       width: 100%;
       aspect-ratio: 2.35 / 1;
       overflow: hidden;
-      background: #fff;
-      border: 1px solid #444;
+      background: transparent;
+      border: 0;
     }
 
     .bottom-vape-feature img {
@@ -324,9 +315,11 @@ Design goal:
       width: 100%;
       height: 100%;
       border: 0;
-      object-fit: contain;
+      background: transparent;
+      object-fit: cover;
       object-position: center center;
-      background: #fff;
+      transform: scale(1.12);
+      transform-origin: center center;
     }
 
     .bottom-vape-feature .image-caption {
@@ -476,9 +469,7 @@ Design goal:
       </div>
     </div>
 
-    <!-- Three-column loose collage -->
     <div id="collage">
-      <!-- LEFT COLUMN: Tall stacked images -->
       <div class="left-column">
         <div class="image-block">
           <a href="Website Assets/junghwan-pocari-sweat.gif" target="_blank" rel="noopener noreferrer">
@@ -495,7 +486,6 @@ Design goal:
         </div>
       </div>
 
-      <!-- CENTER COLUMN: Featured area -->
       <div class="center-column">
         <div class="featured-area">
           <div class="image-block girl-vape-center">
@@ -507,7 +497,6 @@ Design goal:
         </div>
       </div>
 
-      <!-- RIGHT COLUMN: Tall stacked images -->
       <div class="right-column">
         <div class="image-block transparent-gif">
           <a href="Website Assets/vape-gif-transparent.gif" target="_blank" rel="noopener noreferrer">
