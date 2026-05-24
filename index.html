@@ -38,6 +38,7 @@ Design goal:
       margin: 20px auto;
       position: relative;
       background: transparent;
+      overflow: hidden;
     }
 
     header {
@@ -68,7 +69,7 @@ Design goal:
     }
 
     #tabs {
-      margin-bottom: 28px;
+      margin-bottom: 24px;
       padding: 8px 10px 9px;
       text-align: center;
       display: flex;
@@ -160,13 +161,12 @@ Design goal:
     .center-column {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 8px;
       align-items: center;
       position: relative;
       z-index: 2;
     }
 
-    /* Image block styles */
     .image-block {
       position: relative;
     }
@@ -190,7 +190,7 @@ Design goal:
     .image-block.girl-vape-center {
       width: 110%;
       max-width: 420px;
-      margin: 0 auto 8px;
+      margin: 0 auto 4px;
     }
 
     .image-block.girl-vape-center img {
@@ -221,57 +221,6 @@ Design goal:
       width: 70%;
       margin-left: auto;
       margin-right: auto;
-    }
-
-    .bottom-showcase {
-      width: 100%;
-      margin: 56px auto 0;
-      display: flex;
-      justify-content: flex-start;
-      gap: 28px;
-      align-items: flex-start;
-      overflow: visible;
-    }
-
-    /*
-      Premium Flavored Vapes:
-      - Keeps original bottom-showcase placement so the other bottom images stay in their original flow.
-      - Visually moves left.
-      - Visually reduces size by 10%.
-      - Does not reflow Hot Vape Summer or Bored Ape.
-    */
-    .bottom-vape-feature {
-      width: 54%;
-      margin: 0 0 34px 0;
-      flex: 0 0 54%;
-      transform: translateX(-72px) scale(0.9);
-      transform-origin: top left;
-      position: relative;
-      z-index: 2;
-    }
-
-    .bottom-vape-feature img {
-      width: 100%;
-    }
-
-    .bottom-hot-vape-feature {
-      width: 60%;
-      margin: 22px auto 24px;
-    }
-
-    .bottom-hot-vape-feature img {
-      width: 100%;
-      background: transparent;
-    }
-
-    .bottom-ape-feature {
-      width: 24%;
-      margin: 0 auto;
-    }
-
-    .bottom-ape-feature img {
-      width: 100%;
-      background: transparent;
     }
 
     .image-caption {
@@ -306,7 +255,7 @@ Design goal:
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .featured-area img {
@@ -314,19 +263,6 @@ Design goal:
       border: 2px solid #000;
       background: transparent;
       filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.85));
-    }
-
-    .featured-banner {
-      background: #ff3333;
-      color: #fff;
-      padding: 8px 10px;
-      border: 2px solid #000;
-      font: bold 13px "Arial", sans-serif;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 15px;
-      text-align: center;
-      text-shadow: 1px 1px 0 #000;
     }
 
     .featured-caption {
@@ -338,7 +274,7 @@ Design goal:
       font: bold 11px "Arial", sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-top: 2px;
+      margin-top: 0;
       cursor: pointer;
       text-decoration: none;
       text-shadow: none;
@@ -348,7 +284,65 @@ Design goal:
       background: #ffe070;
     }
 
-    /* Small info strips */
+    /*
+      Bottom section rules:
+      - Everything remains inside #page-container / background image width.
+      - Premium Flavored Vapes is left aligned and reduced by 10%.
+      - Hot Vape Summer is centered and exactly 60% of page/background width.
+      - Bored Ape sits below Hot Vape Summer and stays small.
+    */
+    .bottom-showcase {
+      width: 100%;
+      margin: 56px auto 0;
+      display: block;
+      position: relative;
+      overflow: hidden;
+      clear: both;
+    }
+
+    .bottom-vape-feature {
+      width: 48.6%;
+      margin: 0 0 30px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bottom-vape-feature img {
+      width: 100%;
+    }
+
+    .bottom-hot-vape-feature {
+      width: 60%;
+      margin: 0 auto 18px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bottom-hot-vape-feature img {
+      width: 100%;
+      background: transparent;
+    }
+
+    .bottom-ape-feature {
+      width: 13%;
+      margin: 0 auto 28px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .bottom-ape-feature img {
+      width: 100%;
+      background: transparent;
+    }
+
+    .bottom-ape-feature .image-caption {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 10px;
+      line-height: 1.2;
+    }
+
     .info-strip {
       background: rgba(0, 0, 0, 0.88);
       border: 1px solid #666;
@@ -366,7 +360,7 @@ Design goal:
 
     footer {
       text-align: center;
-      margin-top: 80px;
+      margin-top: 30px;
       padding: 20px;
       background: rgba(0, 0, 0, 0.6);
       border: 1px solid #666;
@@ -403,9 +397,9 @@ Design goal:
       }
 
       .bottom-vape-feature {
-        width: 81%;
-        flex: 0 0 81%;
-        transform: none;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
       }
 
       .bottom-hot-vape-feature {
@@ -415,7 +409,7 @@ Design goal:
       }
 
       .bottom-ape-feature {
-        width: 45%;
+        width: 28%;
       }
 
       .image-block.girl-vape-center {
