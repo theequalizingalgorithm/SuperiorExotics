@@ -82,18 +82,23 @@ Design goal:
     }
 
     .tab-row {
-      display: flex;
-      justify-content: center;
-      gap: 12px;
+      display: grid;
+      align-items: center;
+      justify-items: center;
+      gap: 0;
       width: 100%;
     }
 
     .tab-row.top-row {
-      padding-right: 22px;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      padding: 0;
     }
 
     .tab-row.bottom-row {
-      padding-left: 22px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      width: 80%;
+      margin: 0 auto;
+      padding: 0;
     }
 
     #tabs a,
@@ -138,7 +143,7 @@ Design goal:
     #collage {
       display: grid;
       grid-template-columns: 220px 1fr 220px;
-      gap: 30px;
+      gap: 36px;
       align-items: start;
       max-width: 100%;
     }
@@ -147,13 +152,13 @@ Design goal:
     .right-column {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 52px;
     }
 
     .center-column {
       display: flex;
       flex-direction: column;
-      gap: 40px;
+      gap: 48px;
       align-items: center;
     }
 
@@ -179,8 +184,8 @@ Design goal:
     }
 
     .image-block.girl-vape-center {
-      width: 70%;
-      margin: 0 auto;
+      width: 90%;
+      margin: 0 auto 16px;
     }
 
     .image-block.girl-vape-center img {
@@ -274,6 +279,10 @@ Design goal:
     /* Featured center area */
     .featured-area {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
     }
 
     .featured-area img {
@@ -342,14 +351,13 @@ Design goal:
     }
 
     @media (max-width: 1100px) {
-      .tab-row {
-        gap: 5px;
+      .tab-row.top-row {
+        grid-template-columns: repeat(6, minmax(0, 1fr));
       }
 
-      .tab-row.top-row,
       .tab-row.bottom-row {
-        padding-left: 0;
-        padding-right: 0;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 80%;
       }
 
       #tabs a,
@@ -360,10 +368,10 @@ Design goal:
 
       #collage {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 34px;
       }
       .left-column, .right-column, .center-column {
-        gap: 20px;
+        gap: 34px;
       }
       .bottom-vape-feature {
         width: 90%;
@@ -377,7 +385,7 @@ Design goal:
         width: 45%;
       }
       .image-block.girl-vape-center {
-        width: 80%;
+        width: 90%;
       }
       .image-block.merch-large {
         width: 100%;
@@ -399,10 +407,10 @@ Design goal:
         <span class="active">Superior Exotics 2</span>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 3</a>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 4</a>
-      </div>
-      <div class="tab-row bottom-row">
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 5</a>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
+      </div>
+      <div class="tab-row bottom-row">
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
         <a href="javascript:void(0)" onclick="return false;" class="organic-tab">Superior Exotics Organic</a>
