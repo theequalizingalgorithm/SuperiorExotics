@@ -288,11 +288,11 @@ Design goal:
 
     /*
       Bottom section rules:
-      - Structure, x-positioning, image widths, and order remain the same.
-      - Premium Flavored Vapes stays left aligned at 48.6%.
-      - Hot Vape Summer stays centered at 60%.
+      - Premium Flavored Vapes is left aligned and reduced by 10%.
+      - The block is pulled upward to tighten the gap under Pink Leopard.
+      - Premium image scaling is locked to a horizontal banner shape so it cannot blow up/crop into a giant vertical block.
+      - Hot Vape Summer remains centered at 60%.
       - Bored Ape stays small and centered below.
-      - Only the y-position is moved upward to close the unnecessary negative space.
     */
     .bottom-showcase {
       width: 100%;
@@ -310,8 +310,28 @@ Design goal:
       z-index: 2;
     }
 
-    .bottom-vape-feature img {
+    .bottom-vape-feature a {
+      display: block;
       width: 100%;
+      aspect-ratio: 2.35 / 1;
+      overflow: hidden;
+      background: #fff;
+      border: 1px solid #444;
+    }
+
+    .bottom-vape-feature img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      object-fit: cover;
+      object-position: center center;
+      background: #fff;
+    }
+
+    .bottom-vape-feature .image-caption {
+      width: 100%;
+      margin-top: 4px;
     }
 
     .bottom-hot-vape-feature {
@@ -505,7 +525,9 @@ Design goal:
       </div>
     </div>
 
-    <div class="bdetail.html?img=Website%20Assets/How-to-Dispose-of-Vapes.gif&title=Premium%20Flavored%20Vapes">
+    <div class="bottom-showcase">
+      <div class="image-block bottom-vape-feature">
+        <a href="detail.html?img=Website%20Assets/How-to-Dispose-of-Vapes.gif&title=Premium%20Flavored%20Vapes">
           <img src="Website Assets/How-to-Dispose-of-Vapes.gif" alt="Premium Flavored Vapes" />
         </a>
         <div class="image-caption">Premium Flavored Vapes</div>
@@ -521,9 +543,7 @@ Design goal:
         <a href="detail.html?img=Website%20Assets/ezgif.com-gif-maker.gif&title=ezgift.com">
           <img src="Website Assets/ezgif.com-gif-maker.gif" alt="Bored Ape for Sale" />
         </a>
-        <div class="image-caption">Bored Ape for Sale</divhref="Website Assets/ezgif.com-gif-maker.gif" target="_blank">
-          <img src="Website Assets/ezgif.com-gif-maker.gif" alt="Bored Ape for Sale" />
-        </a>
+        <div class="image-caption">Bored Ape for Sale</div>
       </div>
     </div>
 
