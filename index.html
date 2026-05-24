@@ -66,23 +66,25 @@ Design goal:
       text-align: center;
       display: flex;
       justify-content: center;
-      gap: 3px;
-      flex-wrap: wrap;
+      gap: 2px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
     }
 
     #tabs a,
     #tabs span {
       display: inline-block;
       margin: 0;
-      padding: 6px 8px;
+      padding: 5px 6px;
       border: 1px solid #555;
       background: #333;
       color: #ccc;
-      font: bold 10px "Arial", sans-serif;
+      font: bold 9px "Arial", sans-serif;
       text-decoration: none;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.1px;
       cursor: default;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
     #tabs span.active {
@@ -259,7 +261,7 @@ Design goal:
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics Organic</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 10</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics X</a>
     </div>
 
     <!-- Three-column loose collage -->
