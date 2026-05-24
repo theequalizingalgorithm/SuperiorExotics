@@ -47,7 +47,7 @@ Design goal:
 
     .site-title-graphic {
       display: block;
-      width: min(620px, 92%);
+      width: min(155px, 23%);
       height: auto;
       margin: 0 auto 10px;
       filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.65));
@@ -148,6 +148,22 @@ Design goal:
       border: 1px solid #444;
       background: #f5f5f5;
       image-rendering: pixelated;
+    }
+
+    .image-block.transparent-gif img {
+      background: transparent;
+    }
+
+    .image-block.ape-small img {
+      width: 45%;
+      margin: 0 auto;
+      background: transparent;
+    }
+
+    .image-block.ape-small .image-caption {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .image-caption {
@@ -260,7 +276,7 @@ Design goal:
 <body>
   <div id="page-container">
     <header>
-      <img class="site-title-graphic" src="Website Assets/title.png" alt="Superior Exotics" />
+      <img class="site-title-graphic" src="Website Assets/title1.png" alt="Superior Exotics" />
       <div class="tagline">Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.</div>
     </header>
 
@@ -301,18 +317,15 @@ Design goal:
         <div class="featured-banner">Superior Exotics 2</div>
 
         <div class="featured-area">
-          <a href="detail.html?img=Website%20Assets/title.png&title=Premium%20Selection">
-            <img src="Website Assets/title.png" alt="Featured Superior Exotics" />
-          </a>
-          <a href="detail.html?img=Website%20Assets/title.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
+          <a href="detail.html?title=Premium%20Selection" class="featured-caption">Premium Selection</a>
         </div>
       </div>
 
       <!-- RIGHT COLUMN: Tall stacked images -->
       <div class="right-column">
-        <div class="image-block">
-          <a href="detail.html?img=Website%20Assets/vape%20gif%20.gif&title=Vape">
-            <img src="Website Assets/vape gif .gif" alt="Vape" />
+        <div class="image-block transparent-gif">
+          <a href="detail.html?img=Website%20Assets/vape-gif-transparent.gif&title=Vape">
+            <img src="Website Assets/vape-gif-transparent.gif" alt="Vape" />
           </a>
           <div class="image-caption">Vape</div>
         </div>
@@ -324,7 +337,7 @@ Design goal:
           <div class="image-caption">How-to</div>
         </div>
 
-        <div class="image-block">
+        <div class="image-block ape-small">
           <a href="detail.html?img=Website%20Assets/ezgif.com-gif-maker.gif&title=ezgift.com">
             <img src="Website Assets/ezgif.com-gif-maker.gif" alt="ezgift.com" />
           </a>
