@@ -33,17 +33,22 @@ Asset Map:
       padding-bottom: 10px;
       border-bottom: 1px solid #444;
     }
-    .site-header h1 {
-      margin: 0 0 8px;
-      color: #ffdd00;
-      font-size: 34px;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 0 #000;
+    .site-title-graphic {
+      display: block;
+      width: min(560px, 92%);
+      height: auto;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.65));
     }
     .site-header .tagline {
-      color: #ccc;
+      display: inline-block;
+      padding: 5px 9px;
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 221, 0, 0.45);
+      color: #fff4b8;
       font-size: 14px;
       line-height: 1.4;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
     #page-title {
       margin: 0 0 12px;
@@ -56,12 +61,13 @@ Asset Map:
       margin-bottom: 14px;
       padding: 8px;
       border: 2px solid #444;
-      background: #101010;
+      background: rgba(0, 0, 0, 0.78);
     }
     #detail-wrapper .nav a {
-      color: #ffdd00;
+      color: #fff17a;
       text-decoration: none;
       font-weight: bold;
+      text-shadow: 1px 1px 0 #000;
     }
     #detail-wrapper .nav a:hover {
       text-decoration: underline;
@@ -88,16 +94,17 @@ Asset Map:
       margin-top: 12px;
       padding: 10px;
       border: 1px dashed #999;
-      background: #141414;
-      color: #bbb;
-      font-size: 11px;
+      background: rgba(0, 0, 0, 0.86);
+      color: #f0f0f0;
+      font-size: 12px;
+      text-shadow: 1px 1px 0 #000;
     }
   </style>
 </head>
 <body>
   <div id="detail-wrapper">
     <div class="site-header">
-      <h1>Superior Exotics</h1>
+      <img class="site-title-graphic" src="Website Assets/title.png" alt="Superior Exotics" />
       <div class="tagline">Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.</div>
     </div>
     <h2 id="page-title">Superior Exotics</h2>

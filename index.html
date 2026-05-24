@@ -41,34 +41,42 @@ Design goal:
     header {
       text-align: center;
       margin-bottom: 20px;
-      padding: 15px 0;
+      padding: 10px 0 15px;
       background: transparent;
     }
 
-    header h1 {
-      margin: 0 0 10px 0;
-      font-size: 48px;
-      color: #ffdd00;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      letter-spacing: 1px;
-      font-weight: bold;
+    .site-title-graphic {
+      display: block;
+      width: min(620px, 92%);
+      height: auto;
+      margin: 0 auto 10px;
+      filter: drop-shadow(0 3px 2px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 8px rgba(0, 0, 0, 0.65));
     }
 
     header .tagline {
-      color: #ccc;
-      font: 12px "Arial", sans-serif;
+      display: inline-block;
+      max-width: 760px;
+      padding: 5px 9px;
+      background: rgba(0, 0, 0, 0.62);
+      border: 1px solid rgba(255, 221, 0, 0.45);
+      color: #fff4b8;
+      font: bold 13px "Arial", sans-serif;
       line-height: 1.5;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
     #tabs {
       margin-bottom: 40px;
-      padding: 0;
+      padding: 7px 10px 8px;
       text-align: center;
       display: flex;
       justify-content: center;
       gap: 10px;
       flex-wrap: nowrap;
       overflow-x: auto;
+      background: rgba(0, 0, 0, 0.58);
+      border-top: 1px solid rgba(255, 255, 255, 0.18);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.9);
     }
 
     #tabs a,
@@ -78,27 +86,29 @@ Design goal:
       padding: 0;
       border: 0;
       background: transparent;
-      color: #000;
+      color: #fff7bf;
       font: bold 11px "Arial", sans-serif;
       text-decoration: underline;
       letter-spacing: 0.1px;
       cursor: default;
       white-space: nowrap;
       flex-shrink: 0;
+      text-shadow: 1px 1px 0 #000, 0 0 5px #000;
     }
 
     #tabs span.active {
       background: transparent;
-      color: #00cc33;
+      color: #39ff14;
       font-weight: bold;
+      text-shadow: 1px 1px 0 #002b08, 0 0 6px #000;
     }
 
     #tabs a {
-      color: #000;
+      color: #fff7bf;
     }
 
     #tabs a:hover {
-      color: #222;
+      color: #ffffff;
     }
 
     /* Collage layout: left, center, right columns */
@@ -141,27 +151,29 @@ Design goal:
     }
 
     .image-caption {
-      background: rgba(0, 0, 0, 0.8);
+      background: rgba(0, 0, 0, 0.9);
       border: 1px solid #ffdd00;
-      padding: 3px 5px;
-      font: bold 9px "Courier New", monospace;
-      color: #ffdd00;
+      padding: 4px 6px;
+      font: bold 11px "Courier New", monospace;
+      color: #fff17a;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       margin-top: 4px;
       text-align: center;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
     .image-label {
-      background: rgba(0, 0, 0, 0.85);
-      color: #ffdd00;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff17a;
       border: 1px solid #666;
-      padding: 2px 4px;
-      font: 8px "Courier New", monospace;
+      padding: 4px 6px;
+      font: bold 10px "Courier New", monospace;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       margin-top: 3px;
       text-align: center;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
     /* Featured center area */
@@ -172,7 +184,8 @@ Design goal:
     .featured-area img {
       max-width: 100%;
       border: 2px solid #000;
-      background: #fff;
+      background: transparent;
+      filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.85));
     }
 
     .featured-banner {
@@ -185,6 +198,7 @@ Design goal:
       letter-spacing: 1px;
       margin-bottom: 15px;
       text-align: center;
+      text-shadow: 1px 1px 0 #000;
     }
 
     .featured-caption {
@@ -199,6 +213,7 @@ Design goal:
       margin-top: 10px;
       cursor: pointer;
       text-decoration: none;
+      text-shadow: none;
     }
 
     .featured-caption:hover {
@@ -207,13 +222,14 @@ Design goal:
 
     /* Small info strips */
     .info-strip {
-      background: rgba(0, 0, 0, 0.75);
+      background: rgba(0, 0, 0, 0.88);
       border: 1px solid #666;
       padding: 6px 8px;
-      color: #ccc;
-      font: 10px "Courier New", monospace;
+      color: #f0f0f0;
+      font: bold 11px "Courier New", monospace;
       line-height: 1.4;
       margin: 40px 0;
+      text-shadow: 1px 1px 0 #000;
     }
 
     .info-strip strong {
@@ -244,7 +260,7 @@ Design goal:
 <body>
   <div id="page-container">
     <header>
-      <h1>Superior Exotics</h1>
+      <img class="site-title-graphic" src="Website Assets/title.png" alt="Superior Exotics" />
       <div class="tagline">Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.</div>
     </header>
 
@@ -285,10 +301,10 @@ Design goal:
         <div class="featured-banner">Superior Exotics 2</div>
 
         <div class="featured-area">
-          <a href="detail.html?img=Website%20Assets/Title.png&title=Premium%20Selection">
-            <img src="Website Assets/Title.png" alt="Featured Superior Exotics" />
+          <a href="detail.html?img=Website%20Assets/title.png&title=Premium%20Selection">
+            <img src="Website Assets/title.png" alt="Featured Superior Exotics" />
           </a>
-          <a href="detail.html?img=Website%20Assets/Title.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
+          <a href="detail.html?img=Website%20Assets/title.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
         </div>
       </div>
 
