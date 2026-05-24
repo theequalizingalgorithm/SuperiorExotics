@@ -1,13 +1,16 @@
 <!--
 Asset Map:
 - Background image: Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png
-- Layout/style reference: Reference/Screenshot 2026-05-23 at 4.16.00 PM.png
+- Layout/style reference: Reference/Screenshot 2026-05-23 at 4.16.00 PM.png (Image 2)
 - Additional layout reference: Reference/Screenshot 2026-05-23 at 4.45.52 PM.png
 
-Notes:
-- Replace the product image src values below with actual snack product images when available.
-- All visible product/snack images are clickable and open a separate primitive detail view.
-- Only "Superior Exotics 2" is active; other tabs are intentionally inert.
+Design goal:
+- Loose, scattered collage layout (2003 novelty catalog style)
+- Background visible throughout
+- Three-column loose arrangement: left/center/right image stacks
+- Simple old-style HTML buttons for tabs
+- Caption strips instead of product cards
+- Images placed independently over visible background
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -15,179 +18,211 @@ Notes:
   <meta charset="UTF-8" />
   <title>Superior Exotics</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
-      background: #080808 url("Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png") top center no-repeat;
-      background-color: #050505;
-      color: #eee;
-      font: 12px/1.4 "Arial", "Helvetica", sans-serif;
+      background: url("Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png") top center repeat-y;
+      background-color: #1a1a1a;
+      color: #000;
+      font: 12px "Arial", "Helvetica", sans-serif;
     }
-    #page-wrapper {
+
+    #page-container {
       width: 1000px;
-      margin: 32px auto 48px;
-      padding: 10px;
-      border: 2px solid #ffa800;
-      background: rgba(0, 0, 0, 0.82);
-      box-shadow: 0 0 0 2px #333 inset;
+      margin: 20px auto;
+      position: relative;
     }
+
     header {
-      padding: 12px 14px 10px;
-      margin-bottom: 10px;
-      background: #111;
-      border: 2px solid #ff0000;
       text-align: center;
+      margin-bottom: 30px;
+      padding: 20px 0;
     }
+
     header h1 {
       margin: 0;
-      font-size: 44px;
+      font-size: 52px;
       color: #ffdd00;
-      letter-spacing: 1px;
-      text-shadow: 1px 1px 0 #000;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), -1px -1px 0 #ff0000;
+      letter-spacing: 2px;
+      font-weight: bold;
     }
+
     #tabs {
-      background: #111;
-      border: 1px solid #666;
-      padding: 6px 8px 8px;
-      overflow: hidden;
-      margin-bottom: 12px;
+      margin-bottom: 50px;
+      padding: 10px 0;
+      text-align: left;
     }
+
     #tabs a,
     #tabs span {
       display: inline-block;
-      margin: 0 4px 4px 0;
-      padding: 6px 10px;
-      border: 2px solid #444;
+      margin: 4px 3px 4px 0;
+      padding: 5px 9px;
+      border: 1px solid #000;
       background: #ccc;
       color: #000;
-      font-weight: bold;
-      font-size: 11px;
+      font: bold 10px "Arial", sans-serif;
       text-decoration: none;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    #tabs a {
-      background: #ffed80;
-      border-color: #333;
+      letter-spacing: 0.3px;
       cursor: default;
     }
-    #tabs a:hover {
-      background: #ffe070;
-    }
+
     #tabs span.active {
-      background: #ff3f3f;
+      background: #ff3333;
+      color: #fff;
+      font-weight: bold;
+      border: 1px solid #000;
+    }
+
+    #tabs a {
+      background: #ddd;
+    }
+
+    #tabs a:hover {
+      background: #e8e8e8;
+    }
+
+    /* Collage layout: left, center, right columns */
+    #collage {
+      display: grid;
+      grid-template-columns: 220px 1fr 220px;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .left-column,
+    .right-column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .center-column {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      align-items: center;
+    }
+
+    /* Image block styles */
+    .image-block {
+      position: relative;
+    }
+
+    .image-block a {
+      display: block;
+    }
+
+    .image-block img {
+      display: block;
+      width: 100%;
+      border: 1px solid #444;
+      background: #f5f5f5;
+      image-rendering: pixelated;
+    }
+
+    .image-caption {
+      background: rgba(255, 221, 0, 0.9);
+      border: 1px solid #000;
+      padding: 3px 5px;
+      font: bold 9px "Courier New", monospace;
       color: #000;
-      border-color: #000;
-      cursor: default;
-    }
-    .section-box {
-      border: 1px solid #999;
-      padding: 8px;
-      margin-bottom: 10px;
-      background: #171717;
-    }
-    .section-box h2 {
-      margin: 0 0 6px;
-      font-size: 14px;
-      color: #fff;
       text-transform: uppercase;
-      letter-spacing: 0.8px;
-      border-bottom: 1px dashed #666;
-      padding-bottom: 4px;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      text-align: center;
     }
-    .product-card {
-      border: 2px solid #666;
-      background: #0f0f0f;
-      padding: 6px;
-      margin-bottom: 8px;
+
+    .image-label {
+      background: rgba(0, 0, 0, 0.8);
+      color: #ffdd00;
+      border: 1px solid #ffdd00;
+      padding: 2px 4px;
+      font: 8px "Courier New", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-top: 3px;
+      text-align: center;
     }
-    .product-card img {
-      display: block;
-      width: 100%;
+
+    /* Featured center area */
+    .featured-area {
+      text-align: center;
+    }
+
+    .featured-area img {
       max-width: 100%;
-      border: 1px solid #444;
-      image-rendering: pixelated;
+      border: 2px solid #000;
+      background: #fff;
     }
-    .product-card .title {
-      margin: 6px 0 0;
-      font: bold 11px "Courier New", monospace;
-      color: #ffd800;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-    }
-    .product-card .placeholder {
-      font: 11px "Courier New", monospace;
-      color: #bbb;
-      margin-top: 4px;
-    }
-    table.layout {
-      width: 100%;
-      border-collapse: collapse;
-    }
-    table.layout td {
-      vertical-align: top;
-      border: 2px solid #222;
-      padding: 8px;
-    }
-    .wide-banner {
-      border: 2px solid #ff0000;
-      background: #121212;
-      padding: 10px;
-      text-align: center;
-      margin-bottom: 12px;
+
+    .featured-banner {
+      background: #ff3333;
       color: #fff;
+      padding: 8px 10px;
+      border: 2px solid #000;
       font: bold 13px "Arial", sans-serif;
-      letter-spacing: 1px;
-    }
-    .wide-banner small {
-      display: block;
-      margin-top: 4px;
-      color: #8f8f8f;
-      font-size: 10px;
       text-transform: uppercase;
-    }
-    .detail-block {
-      border: 1px dashed #999;
-      padding: 8px;
-      margin-bottom: 10px;
-      background: #151515;
-      font-size: 11px;
-      color: #ccc;
-      line-height: 1.5;
-    }
-    .detail-block strong {
-      color: #ffcc00;
-    }
-    .mini-grid {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 4px;
-    }
-    .mini-grid td {
-      width: 50%;
-      border: 1px solid #555;
-      padding: 4px;
-      background: #101010;
-    }
-    .mini-grid img {
-      width: 100%;
-      height: auto;
-      border: 1px solid #333;
-      image-rendering: pixelated;
-    }
-    .footer-bar {
-      margin-top: 14px;
-      padding: 8px;
-      border: 1px solid #444;
-      background: #111;
-      color: #aaa;
-      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
       text-align: center;
+    }
+
+    .featured-caption {
+      background: rgba(0, 0, 0, 0.7);
+      color: #ffdd00;
+      padding: 5px 8px;
+      border: 1px solid #ffdd00;
+      font: bold 10px "Courier New", monospace;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 6px;
+    }
+
+    /* Small info strips */
+    .info-strip {
+      background: rgba(0, 0, 0, 0.75);
+      border: 1px solid #666;
+      padding: 6px 8px;
+      color: #ccc;
+      font: 10px "Courier New", monospace;
+      line-height: 1.4;
+      margin: 40px 0;
+    }
+
+    .info-strip strong {
+      color: #ffdd00;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 80px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid #666;
+      color: #aaa;
+      font: 10px "Courier New", monospace;
+    }
+
+    @media (max-width: 1100px) {
+      #collage {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .left-column, .right-column, .center-column {
+        gap: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div id="page-wrapper">
+  <div id="page-container">
     <header>
       <h1>Superior Exotics</h1>
     </header>
@@ -205,109 +240,87 @@ Notes:
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 10</a>
     </div>
 
-    <table class="layout">
-      <tr>
-        <td style="width: 280px; background: #111;">
-          <div class="section-box">
-            <h2>[BANNER PLACEHOLDER]</h2>
-            <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Banner">
-              <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Superior Exotics banner" />
-            </a>
-            <div class="placeholder" style="margin-top:6px;">Image block for snack spotlight. Replace with actual product image.</div>
-          </div>
+    <!-- Three-column loose collage -->
+    <div id="collage">
+      <!-- LEFT COLUMN: Tall stacked images -->
+      <div class="left-column">
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Select">
+            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          </a>
+          <div class="image-caption">Superior Select</div>
+        </div>
 
-          <div class="section-box">
-            <h2>[COPY PLACEHOLDER]</h2>
-            <div class="detail-block">
-              <strong>Brand:</strong> Superior Exotics<br />
-              <strong>Style:</strong> Old web catalog grid<br />
-              <strong>Space:</strong> Edit text here later.
-            </div>
-          </div>
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Blend">
+            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
+          </a>
+          <div class="image-label">[PRODUCT]</div>
+        </div>
 
-          <div class="section-box">
-            <h2>[PRODUCT TITLE PLACEHOLDER]</h2>
-            <div class="product-card">
-              <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Sample%20Snack">
-                <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product placeholder" />
-              </a>
-              <div class="title">[PRODUCT TITLE PLACEHOLDER]</div>
-              <div class="placeholder">Replace with snack info later</div>
-            </div>
-            <div class="product-card">
-              <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Sample%20Snack%202">
-                <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product placeholder" />
-              </a>
-              <div class="title">[PRODUCT TITLE PLACEHOLDER]</div>
-              <div class="placeholder">Swap this image for a real snack photo.</div>
-            </div>
-          </div>
-        </td>
-        <td style="background: #161616;">
-          <div class="wide-banner">
-            Superior Exotics 2<br />
-            <small>[BANNER PLACEHOLDER]</small>
-          </div>
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Exotic%20Favorites">
+            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          </a>
+          <div class="image-caption">Exotic Favorites</div>
+        </div>
+      </div>
 
-          <div class="section-box">
-            <h2>SUPERIOR EXOTICS</h2>
-            <table class="mini-grid">
-              <tr>
-                <td>
-                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Featured%201">
-                    <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Featured snack" />
-                  </a>
-                </td>
-                <td>
-                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Featured%202">
-                    <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Featured snack" />
-                  </a>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="placeholder">[PRODUCT TITLE PLACEHOLDER]</div>
-                </td>
-                <td>
-                  <div class="placeholder">[PRODUCT TITLE PLACEHOLDER]</div>
-                </td>
-              </tr>
-            </table>
-          </div>
+      <!-- CENTER COLUMN: Featured area -->
+      <div class="center-column">
+        <div class="featured-banner">Superior Exotics 2</div>
 
-          <div class="section-box">
-            <h2>[COPY PLACEHOLDER]</h2>
-            <div class="detail-block">
-              <strong>Section:</strong> Inline product info table<br />
-              <strong>Layout:</strong> cluttered imagery, bold borders, old web spacing.<br />
-              <strong>Notes:</strong> Keep the background visible behind content blocks.
-            </div>
-          </div>
+        <div class="featured-area">
+          <a href="detail.html?img=Reference/ChatGPT%20Image%20May%2023%2C%202026%2C%2004_29_42%20PM.png&title=Premium%20Selection">
+            <img src="Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png" alt="Featured Superior Exotics" />
+          </a>
+          <div class="featured-caption">Premium Selection</div>
+        </div>
 
-          <div class="section-box">
-            <h2>[PRODUCT TITLE PLACEHOLDER]</h2>
-            <table class="mini-grid">
-              <tr>
-                <td>
-                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Sample%203">
-                    <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product placeholder" />
-                  </a>
-                </td>
-                <td>
-                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Sample%204">
-                    <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product placeholder" />
-                  </a>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </td>
-      </tr>
-    </table>
+        <div class="info-strip">
+          <strong>Superior Exotics:</strong> Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.
+        </div>
 
-    <div class="footer-bar">
-      Superior Exotics - early 2000s raw HTML catalog view. Only image clicks are active.
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Signature%20Blend">
+            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
+          </a>
+          <div class="image-label">[FEATURED]</div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: Tall stacked images -->
+      <div class="right-column">
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Collectors%20Choice">
+            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          </a>
+          <div class="image-label">[NEW]</div>
+        </div>
+
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Limited%20Edition">
+            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
+          </a>
+          <div class="image-caption">Limited Edition</div>
+        </div>
+
+        <div class="image-block">
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Rare%20Find">
+            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          </a>
+          <div class="image-label">[STOCK]</div>
+        </div>
+      </div>
     </div>
+
+    <div class="info-strip">
+      <strong>Note:</strong> All product images are clickable. Navigate tabs to explore other collections. Only Superior Exotics 2 tab is currently active.
+    </div>
+
+    <footer>
+      Superior Exotics — 2003-era catalog aesthetic. Background visible throughout. Images scattered over nostalgic layout.
+    </footer>
   </div>
 </body>
 </html>
