@@ -71,23 +71,38 @@ Design goal:
       margin-bottom: 40px;
       padding: 8px 10px 9px;
       text-align: center;
-      display: grid;
-      grid-template-columns: repeat(5, max-content);
-      justify-content: center;
-      gap: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
       overflow-x: hidden;
       background: rgba(0, 0, 0, 0.78);
       border: 1px solid #ffdd00;
       max-width: 100%;
     }
 
+    .tab-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+    }
+
+    .tab-row.top-row {
+      padding-right: 22px;
+    }
+
+    .tab-row.bottom-row {
+      padding-left: 22px;
+    }
+
     #tabs a,
     #tabs span {
       display: inline-block;
       margin: 0;
-      padding: 4px 6px;
-      border: 1px solid #ffdd00;
-      background: rgba(0, 0, 0, 0.9);
+      padding: 0;
+      border: 0;
+      background: transparent;
       color: #fff17a;
       font: bold 11px "Courier New", monospace;
       text-decoration: none;
@@ -100,10 +115,9 @@ Design goal:
     }
 
     #tabs span.active {
-      background: #ff3333;
-      color: #fff17a;
+      background: transparent;
+      color: #ff3333;
       font-weight: bold;
-      border-color: #ffdd00;
       text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
@@ -111,9 +125,13 @@ Design goal:
       color: #fff17a;
     }
 
+    #tabs a.organic-tab {
+      color: #39ff14;
+    }
+
     #tabs a:hover {
       color: #ffffff;
-      background: rgba(20, 20, 20, 0.95);
+      background: transparent;
     }
 
     /* Collage layout: left, center, right columns */
@@ -294,9 +312,14 @@ Design goal:
     }
 
     @media (max-width: 1100px) {
-      #tabs {
-        grid-template-columns: repeat(5, max-content);
-        gap: 5px 5px;
+      .tab-row {
+        gap: 5px;
+      }
+
+      .tab-row.top-row,
+      .tab-row.bottom-row {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       #tabs a,
@@ -329,16 +352,20 @@ Design goal:
     </header>
 
     <div id="tabs">
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 1</a>
-      <span class="active">Superior Exotics 2</span>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 3</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 4</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 5</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics Organic</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics X</a>
+      <div class="tab-row top-row">
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 1</a>
+        <span class="active">Superior Exotics 2</span>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 3</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 4</a>
+      </div>
+      <div class="tab-row bottom-row">
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 5</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
+        <a href="javascript:void(0)" onclick="return false;" class="organic-tab">Superior Exotics Organic</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics X</a>
+      </div>
     </div>
 
     <!-- Three-column loose collage -->
