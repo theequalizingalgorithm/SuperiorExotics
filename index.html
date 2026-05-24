@@ -66,7 +66,7 @@ Design goal:
       text-align: center;
       display: flex;
       justify-content: center;
-      gap: 2px;
+      gap: 10px;
       flex-wrap: nowrap;
       overflow-x: auto;
     }
@@ -75,12 +75,12 @@ Design goal:
     #tabs span {
       display: inline-block;
       margin: 0;
-      padding: 5px 6px;
-      border: 1px solid #555;
-      background: #333;
-      color: #ccc;
-      font: bold 9px "Arial", sans-serif;
-      text-decoration: none;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: #000;
+      font: bold 11px "Arial", sans-serif;
+      text-decoration: underline;
       letter-spacing: 0.1px;
       cursor: default;
       white-space: nowrap;
@@ -88,18 +88,17 @@ Design goal:
     }
 
     #tabs span.active {
-      background: #ff3333;
-      color: #fff;
+      background: transparent;
+      color: #00cc33;
       font-weight: bold;
-      border: 1px solid #000;
     }
 
     #tabs a {
-      background: #444;
+      color: #000;
     }
 
     #tabs a:hover {
-      background: #555;
+      color: #222;
     }
 
     /* Collage layout: left, center, right columns */
@@ -162,8 +161,6 @@ Design goal:
       text-transform: uppercase;
       letter-spacing: 0.3px;
       margin-top: 3px;
-      text-align: center;
-    }
       text-align: center;
     }
 
@@ -269,24 +266,10 @@ Design goal:
       <!-- LEFT COLUMN: Tall stacked images -->
       <div class="left-column">
         <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Select">
-            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          <a href="detail.html?img=Website%20Assets/pink%20leopard%20gif.gif&title=Pink%20Leopard">
+            <img src="Website Assets/pink leopard gif.gif" alt="Pink Leopard" />
           </a>
-          <div class="image-caption">Superior Select</div>
-        </div>
-
-        <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Blend">
-            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
-          </a>
-          <div class="image-label">[PRODUCT]</div>
-        </div>
-
-        <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Exotic%20Favorites">
-            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
-          </a>
-          <div class="image-caption">Exotic Favorites</div>
+          <div class="image-caption">Pink Leopard</div>
         </div>
       </div>
 
@@ -295,41 +278,34 @@ Design goal:
         <div class="featured-banner">Superior Exotics 2</div>
 
         <div class="featured-area">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Selection">
-            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Featured Superior Exotics" />
+          <a href="detail.html?img=Website%20Assets/Title.png&title=Premium%20Selection">
+            <img src="Website Assets/Title.png" alt="Featured Superior Exotics" />
           </a>
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
-        </div>
-
-        <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Signature%20Blend">
-            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
-          </a>
-          <div class="image-label">[FEATURED]</div>
+          <a href="detail.html?img=Website%20Assets/Title.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
         </div>
       </div>
 
       <!-- RIGHT COLUMN: Tall stacked images -->
       <div class="right-column">
         <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Collectors%20Choice">
-            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          <a href="detail.html?img=Website%20Assets/vape%20gif%20.gif&title=Vape">
+            <img src="Website Assets/vape gif .gif" alt="Vape" />
           </a>
-          <div class="image-label">[NEW]</div>
+          <div class="image-caption">Vape</div>
         </div>
 
         <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Limited%20Edition">
-            <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product" />
+          <a href="detail.html?img=Website%20Assets/How-to-Dispose-of-Vapes.gif&title=How-to">
+            <img src="Website Assets/How-to-Dispose-of-Vapes.gif" alt="How-to" />
           </a>
-          <div class="image-caption">Limited Edition</div>
+          <div class="image-caption">How-to</div>
         </div>
 
         <div class="image-block">
-          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Rare%20Find">
-            <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product" />
+          <a href="detail.html?img=Website%20Assets/ezgif.com-gif-maker.gif&title=ezgift.com">
+            <img src="Website Assets/ezgif.com-gif-maker.gif" alt="ezgift.com" />
           </a>
-          <div class="image-label">[STOCK]</div>
+          <div class="image-caption">Bored Ape for Sale</div>
         </div>
       </div>
     </div>
