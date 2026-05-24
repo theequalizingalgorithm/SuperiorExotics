@@ -29,10 +29,12 @@ Design goal:
       background-color: #1a1a1a;
       color: #ccc;
       font: 14px "Arial", "Helvetica", sans-serif;
+      overflow-x: hidden;
     }
 
     #page-container {
-      width: 1000px;
+      width: 941px;
+      max-width: calc(100vw - 24px);
       margin: 20px auto;
       position: relative;
       background: transparent;
@@ -77,6 +79,7 @@ Design goal:
       background: rgba(0, 0, 0, 0.58);
       border-top: 1px solid rgba(255, 255, 255, 0.18);
       border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+      max-width: 100%;
     }
 
     #tabs a,
@@ -117,6 +120,7 @@ Design goal:
       grid-template-columns: 220px 1fr 220px;
       gap: 30px;
       align-items: start;
+      max-width: 100%;
     }
 
     .left-column,
