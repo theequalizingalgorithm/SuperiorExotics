@@ -43,8 +43,8 @@ Design goal:
 
     header {
       text-align: center;
-      margin-bottom: 20px;
-      padding: 10px 0 15px;
+      margin-bottom: 18px;
+      padding: 10px 0 12px;
       background: transparent;
     }
 
@@ -58,18 +58,20 @@ Design goal:
 
     header .tagline {
       display: inline-block;
-      max-width: 760px;
-      padding: 5px 9px;
+      max-width: 790px;
+      padding: 6px 12px;
       background: rgba(0, 0, 0, 0.62);
       border: 1px solid rgba(255, 221, 0, 0.45);
       color: #fff4b8;
-      font: bold 13px "Arial", sans-serif;
-      line-height: 1.5;
+      font: bold 16px "Courier New", monospace;
+      line-height: 1.25;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
       text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
     #tabs {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       padding: 8px 10px 9px;
       text-align: center;
       display: flex;
@@ -290,11 +292,11 @@ Design goal:
       - Premium Flavored Vapes is left aligned and reduced by 10%.
       - Hot Vape Summer is centered and exactly 60% of page/background width.
       - Bored Ape sits below Hot Vape Summer and stays small.
-      - Entire bottom section is moved upward together so the spacing mirrors the opposite side better.
+      - Entire bottom section is moved upward to close unnecessary negative space.
     */
     .bottom-showcase {
       width: 100%;
-      margin: 12px auto 0;
+      margin: -54px auto 0;
       display: block;
       position: relative;
       overflow: hidden;
@@ -303,7 +305,7 @@ Design goal:
 
     .bottom-vape-feature {
       width: 48.6%;
-      margin: 0 0 16px 0;
+      margin: 0 0 8px 0;
       position: relative;
       z-index: 2;
     }
@@ -314,7 +316,7 @@ Design goal:
 
     .bottom-hot-vape-feature {
       width: 60%;
-      margin: 0 auto 14px;
+      margin: 0 auto 10px;
       position: relative;
       z-index: 2;
     }
@@ -326,7 +328,7 @@ Design goal:
 
     .bottom-ape-feature {
       width: 13%;
-      margin: 0 auto 20px;
+      margin: 0 auto 16px;
       position: relative;
       z-index: 2;
     }
@@ -361,7 +363,7 @@ Design goal:
 
     footer {
       text-align: center;
-      margin-top: 30px;
+      margin-top: 24px;
       padding: 20px;
       background: rgba(0, 0, 0, 0.6);
       border: 1px solid #666;
@@ -395,6 +397,10 @@ Design goal:
       .right-column,
       .center-column {
         gap: 34px;
+      }
+
+      .bottom-showcase {
+        margin-top: 12px;
       }
 
       .bottom-vape-feature {
