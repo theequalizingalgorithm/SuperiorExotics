@@ -1,0 +1,313 @@
+<!--
+Asset Map:
+- Background image: Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png
+- Layout/style reference: Reference/Screenshot 2026-05-23 at 4.16.00 PM.png
+- Additional layout reference: Reference/Screenshot 2026-05-23 at 4.45.52 PM.png
+
+Notes:
+- Replace the product image src values below with actual snack product images when available.
+- All visible product/snack images are clickable and open a separate primitive detail view.
+- Only "Superior Exotics 2" is active; other tabs are intentionally inert.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Superior Exotics</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #080808 url("Reference/ChatGPT Image May 23, 2026, 04_29_42 PM.png") top center no-repeat;
+      background-color: #050505;
+      color: #eee;
+      font: 12px/1.4 "Arial", "Helvetica", sans-serif;
+    }
+    #page-wrapper {
+      width: 1000px;
+      margin: 32px auto 48px;
+      padding: 10px;
+      border: 2px solid #ffa800;
+      background: rgba(0, 0, 0, 0.82);
+      box-shadow: 0 0 0 2px #333 inset;
+    }
+    header {
+      padding: 12px 14px 10px;
+      margin-bottom: 10px;
+      background: #111;
+      border: 2px solid #ff0000;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 44px;
+      color: #ffdd00;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+    #tabs {
+      background: #111;
+      border: 1px solid #666;
+      padding: 6px 8px 8px;
+      overflow: hidden;
+      margin-bottom: 12px;
+    }
+    #tabs a,
+    #tabs span {
+      display: inline-block;
+      margin: 0 4px 4px 0;
+      padding: 6px 10px;
+      border: 2px solid #444;
+      background: #ccc;
+      color: #000;
+      font-weight: bold;
+      font-size: 11px;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    #tabs a {
+      background: #ffed80;
+      border-color: #333;
+      cursor: default;
+    }
+    #tabs a:hover {
+      background: #ffe070;
+    }
+    #tabs span.active {
+      background: #ff3f3f;
+      color: #000;
+      border-color: #000;
+      cursor: default;
+    }
+    .section-box {
+      border: 1px solid #999;
+      padding: 8px;
+      margin-bottom: 10px;
+      background: #171717;
+    }
+    .section-box h2 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      border-bottom: 1px dashed #666;
+      padding-bottom: 4px;
+    }
+    .product-card {
+      border: 2px solid #666;
+      background: #0f0f0f;
+      padding: 6px;
+      margin-bottom: 8px;
+    }
+    .product-card img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      border: 1px solid #444;
+      image-rendering: pixelated;
+    }
+    .product-card .title {
+      margin: 6px 0 0;
+      font: bold 11px "Courier New", monospace;
+      color: #ffd800;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+    .product-card .placeholder {
+      font: 11px "Courier New", monospace;
+      color: #bbb;
+      margin-top: 4px;
+    }
+    table.layout {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    table.layout td {
+      vertical-align: top;
+      border: 2px solid #222;
+      padding: 8px;
+    }
+    .wide-banner {
+      border: 2px solid #ff0000;
+      background: #121212;
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 12px;
+      color: #fff;
+      font: bold 13px "Arial", sans-serif;
+      letter-spacing: 1px;
+    }
+    .wide-banner small {
+      display: block;
+      margin-top: 4px;
+      color: #8f8f8f;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+    .detail-block {
+      border: 1px dashed #999;
+      padding: 8px;
+      margin-bottom: 10px;
+      background: #151515;
+      font-size: 11px;
+      color: #ccc;
+      line-height: 1.5;
+    }
+    .detail-block strong {
+      color: #ffcc00;
+    }
+    .mini-grid {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 4px;
+    }
+    .mini-grid td {
+      width: 50%;
+      border: 1px solid #555;
+      padding: 4px;
+      background: #101010;
+    }
+    .mini-grid img {
+      width: 100%;
+      height: auto;
+      border: 1px solid #333;
+      image-rendering: pixelated;
+    }
+    .footer-bar {
+      margin-top: 14px;
+      padding: 8px;
+      border: 1px solid #444;
+      background: #111;
+      color: #aaa;
+      font-size: 11px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="page-wrapper">
+    <header>
+      <h1>Superior Exotics</h1>
+    </header>
+
+    <div id="tabs">
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 1</a>
+      <span class="active">Superior Exotics 2</span>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 3</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 4</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 5</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 9</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 10</a>
+    </div>
+
+    <table class="layout">
+      <tr>
+        <td style="width: 280px; background: #111;">
+          <div class="section-box">
+            <h2>[BANNER PLACEHOLDER]</h2>
+            <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Banner">
+              <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Superior Exotics banner" />
+            </a>
+            <div class="placeholder" style="margin-top:6px;">Image block for snack spotlight. Replace with actual product image.</div>
+          </div>
+
+          <div class="section-box">
+            <h2>[COPY PLACEHOLDER]</h2>
+            <div class="detail-block">
+              <strong>Brand:</strong> Superior Exotics<br />
+              <strong>Style:</strong> Old web catalog grid<br />
+              <strong>Space:</strong> Edit text here later.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h2>[PRODUCT TITLE PLACEHOLDER]</h2>
+            <div class="product-card">
+              <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Sample%20Snack">
+                <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product placeholder" />
+              </a>
+              <div class="title">[PRODUCT TITLE PLACEHOLDER]</div>
+              <div class="placeholder">Replace with snack info later</div>
+            </div>
+            <div class="product-card">
+              <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Sample%20Snack%202">
+                <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product placeholder" />
+              </a>
+              <div class="title">[PRODUCT TITLE PLACEHOLDER]</div>
+              <div class="placeholder">Swap this image for a real snack photo.</div>
+            </div>
+          </div>
+        </td>
+        <td style="background: #161616;">
+          <div class="wide-banner">
+            Superior Exotics 2<br />
+            <small>[BANNER PLACEHOLDER]</small>
+          </div>
+
+          <div class="section-box">
+            <h2>SUPERIOR EXOTICS</h2>
+            <table class="mini-grid">
+              <tr>
+                <td>
+                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Featured%201">
+                    <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Featured snack" />
+                  </a>
+                </td>
+                <td>
+                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Featured%202">
+                    <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Featured snack" />
+                  </a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="placeholder">[PRODUCT TITLE PLACEHOLDER]</div>
+                </td>
+                <td>
+                  <div class="placeholder">[PRODUCT TITLE PLACEHOLDER]</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <div class="section-box">
+            <h2>[COPY PLACEHOLDER]</h2>
+            <div class="detail-block">
+              <strong>Section:</strong> Inline product info table<br />
+              <strong>Layout:</strong> cluttered imagery, bold borders, old web spacing.<br />
+              <strong>Notes:</strong> Keep the background visible behind content blocks.
+            </div>
+          </div>
+
+          <div class="section-box">
+            <h2>[PRODUCT TITLE PLACEHOLDER]</h2>
+            <table class="mini-grid">
+              <tr>
+                <td>
+                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Superior%20Exotics%20Sample%203">
+                    <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Product placeholder" />
+                  </a>
+                </td>
+                <td>
+                  <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.45.52%20PM.png&title=Superior%20Exotics%20Sample%204">
+                    <img src="Reference/Screenshot 2026-05-23 at 4.45.52 PM.png" alt="Product placeholder" />
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="footer-bar">
+      Superior Exotics - early 2000s raw HTML catalog view. Only image clicks are active.
+    </div>
+  </div>
+</body>
+</html>
