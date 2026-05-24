@@ -68,7 +68,7 @@ Design goal:
     }
 
     #tabs {
-      margin-bottom: 40px;
+      margin-bottom: 28px;
       padding: 8px 10px 9px;
       text-align: center;
       display: flex;
@@ -160,7 +160,7 @@ Design goal:
     .center-column {
       display: flex;
       flex-direction: column;
-      gap: 48px;
+      gap: 18px;
       align-items: center;
       position: relative;
       z-index: 2;
@@ -190,7 +190,7 @@ Design goal:
     .image-block.girl-vape-center {
       width: 110%;
       max-width: 420px;
-      margin: 0 auto 20px;
+      margin: 0 auto 8px;
     }
 
     .image-block.girl-vape-center img {
@@ -230,12 +230,24 @@ Design goal:
       justify-content: flex-start;
       gap: 28px;
       align-items: flex-start;
+      overflow: visible;
     }
 
+    /*
+      Premium Flavored Vapes:
+      - Keeps original bottom-showcase placement so the other bottom images stay in their original flow.
+      - Visually moves left.
+      - Visually reduces size by 10%.
+      - Does not reflow Hot Vape Summer or Bored Ape.
+    */
     .bottom-vape-feature {
       width: 54%;
       margin: 0 0 34px 0;
       flex: 0 0 54%;
+      transform: translateX(-72px) scale(0.9);
+      transform-origin: top left;
+      position: relative;
+      z-index: 2;
     }
 
     .bottom-vape-feature img {
@@ -294,7 +306,7 @@ Design goal:
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      gap: 8px;
     }
 
     .featured-area img {
@@ -326,7 +338,7 @@ Design goal:
       font: bold 11px "Arial", sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-top: 10px;
+      margin-top: 2px;
       cursor: pointer;
       text-decoration: none;
       text-shadow: none;
@@ -383,24 +395,34 @@ Design goal:
         grid-template-columns: 1fr;
         gap: 34px;
       }
-      .left-column, .right-column, .center-column {
+
+      .left-column,
+      .right-column,
+      .center-column {
         gap: 34px;
       }
+
       .bottom-vape-feature {
         width: 81%;
+        flex: 0 0 81%;
+        transform: none;
       }
+
       .bottom-hot-vape-feature {
         width: 90%;
         margin-top: 18px;
         margin-bottom: 20px;
       }
+
       .bottom-ape-feature {
         width: 45%;
       }
+
       .image-block.girl-vape-center {
         width: 100%;
         max-width: 420px;
       }
+
       .image-block.merch-large {
         width: 100%;
         transform: none;
@@ -413,7 +435,7 @@ Design goal:
   <div id="page-container">
     <header>
       <img class="site-title-graphic" src="Website Assets/title1.png" alt="Superior Exotics" />
-      <div class="tagline">Fine imported snacks. </div>
+      <div class="tagline">Exotic imported snacks and goods.</div>
     </header>
 
     <div id="tabs">
@@ -454,8 +476,6 @@ Design goal:
 
       <!-- CENTER COLUMN: Featured area -->
       <div class="center-column">
-        <div class="featured-banner">Superior Exotics 2</div>
-
         <div class="featured-area">
           <div class="image-block girl-vape-center">
             <a href="detail.html?img=Website%20Assets/girl-vape-gif.webp&title=Girl%20Vape">
