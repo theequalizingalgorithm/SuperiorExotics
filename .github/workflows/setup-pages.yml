@@ -24,10 +24,12 @@ jobs:
 
             try {
               await github.rest.repos.getPages({ owner, repo });
-              await github.rest.repos.updatePagesSite({ owner, repo, source });
+              await github.rest.repos.createPagesSite({ owner, repo, source });
               console.log('Updated GitHub Pages source to main root.');
             } catch (error) {
-              if (error.status === 404) {
+              if (error.status === 409) {
+                console.log('GitHub Pages already configured.');
+              } else if (error.status === 404) {
                 await github.rest.repos.createPagesSite({ owner, repo, source });
                 console.log('Created GitHub Pages site using main root.');
               } else {
