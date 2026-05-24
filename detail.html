@@ -27,10 +27,28 @@ Asset Map:
       border: 2px solid #ffd800;
       background: rgba(0, 0, 0, 0.88);
     }
-    #detail-wrapper h1 {
+    .site-header {
+      text-align: center;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #444;
+    }
+    .site-header h1 {
+      margin: 0 0 8px;
+      color: #ffdd00;
+      font-size: 34px;
+      letter-spacing: 1px;
+      text-shadow: 1px 1px 0 #000;
+    }
+    .site-header .tagline {
+      color: #ccc;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+    #page-title {
       margin: 0 0 12px;
       color: #ffcc00;
-      font-size: 32px;
+      font-size: 24px;
       letter-spacing: 1px;
       text-shadow: 1px 1px 0 #000;
     }
@@ -51,12 +69,14 @@ Asset Map:
     #detail-image {
       padding: 10px;
       border: 2px solid #ff0000;
-      background: #111;
+      background: rgba(0, 0, 0, 0.45);
       text-align: center;
     }
     #detail-image img {
       max-width: 100%;
       border: 1px solid #444;
+      background: transparent;
+      display: inline-block;
       image-rendering: pixelated;
     }
     #detail-image .missing {
@@ -76,7 +96,11 @@ Asset Map:
 </head>
 <body>
   <div id="detail-wrapper">
-    <h1 id="page-title">Superior Exotics</h1>
+    <div class="site-header">
+      <h1>Superior Exotics</h1>
+      <div class="tagline">Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.</div>
+    </div>
+    <h2 id="page-title">Superior Exotics</h2>
     <div class="nav">
       <a href="index.html">&larr; Back to Superior Exotics 2</a>
     </div>
@@ -111,6 +135,7 @@ Asset Map:
     var container = document.getElementById('detail-image');
     var pageTitle = document.getElementById('page-title');
     pageTitle.textContent = title;
+    document.title = title + ' | Superior Exotics';
     if (img) {
       container.innerHTML = '<img src="' + img + '" alt="' + title + '" />';
     } else {
