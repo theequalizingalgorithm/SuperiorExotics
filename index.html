@@ -46,12 +46,18 @@ Design goal:
     }
 
     header h1 {
-      margin: 0;
+      margin: 0 0 10px 0;
       font-size: 48px;
       color: #ffdd00;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
       letter-spacing: 1px;
       font-weight: bold;
+    }
+
+    header .tagline {
+      color: #ccc;
+      font: 12px "Arial", sans-serif;
+      line-height: 1.5;
     }
 
     #tabs {
@@ -183,14 +189,21 @@ Design goal:
     }
 
     .featured-caption {
-      background: rgba(0, 0, 0, 0.7);
-      color: #ffdd00;
-      padding: 5px 8px;
-      border: 1px solid #ffdd00;
-      font: bold 10px "Courier New", monospace;
+      display: inline-block;
+      background: #ffdd00;
+      color: #000;
+      padding: 8px 14px;
+      border: 2px solid #000;
+      font: bold 11px "Arial", sans-serif;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-top: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .featured-caption:hover {
+      background: #ffe070;
     }
 
     /* Small info strips */
@@ -233,6 +246,7 @@ Design goal:
   <div id="page-container">
     <header>
       <h1>Superior Exotics</h1>
+      <div class="tagline">Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.</div>
     </header>
 
     <div id="tabs">
@@ -244,7 +258,7 @@ Design goal:
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
-      <a href="javascript:void(0)" onclick="return false;">Superior Exotics 9</a>
+      <a href="javascript:void(0)" onclick="return false;">Superior Exotics Organic</a>
       <a href="javascript:void(0)" onclick="return false;">Superior Exotics 10</a>
     </div>
 
@@ -282,11 +296,7 @@ Design goal:
           <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Selection">
             <img src="Reference/Screenshot 2026-05-23 at 4.16.00 PM.png" alt="Featured Superior Exotics" />
           </a>
-          <div class="featured-caption">Premium Selection</div>
-        </div>
-
-        <div class="info-strip">
-          <strong>Superior Exotics:</strong> Fine imported snacks and novelty items. Rare flavors and exotic combinations sourced from specialty producers.
+          <a href="detail.html?img=Reference/Screenshot%202026-05-23%20at%204.16.00%20PM.png&title=Premium%20Selection" class="featured-caption">Premium Selection</a>
         </div>
 
         <div class="image-block">
@@ -322,12 +332,8 @@ Design goal:
       </div>
     </div>
 
-    <div class="info-strip">
-      <strong>Note:</strong> All product images are clickable. Only Superior Exotics 2 tab is currently active.
-    </div>
-
     <footer>
-      Superior Exotics — Early 2000s raw HTML catalog view. Only image clicks are active.
+      
     </footer>
   </div>
 </body>
