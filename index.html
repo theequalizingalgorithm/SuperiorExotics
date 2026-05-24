@@ -144,8 +144,8 @@ Design goal:
     /* Collage layout: left, center, right columns */
     #collage {
       display: grid;
-      grid-template-columns: 220px 1fr 220px;
-      gap: 36px;
+      grid-template-columns: 210px 1fr 290px;
+      gap: 44px;
       align-items: start;
       max-width: 100%;
     }
@@ -162,6 +162,8 @@ Design goal:
       flex-direction: column;
       gap: 48px;
       align-items: center;
+      position: relative;
+      z-index: 2;
     }
 
     /* Image block styles */
@@ -196,8 +198,12 @@ Design goal:
     }
 
     .image-block.merch-large {
-      width: 175%;
-      margin-left: -75%;
+      width: 100%;
+      transform: scale(1.25);
+      transform-origin: top right;
+      margin: 24px 0 96px;
+      position: relative;
+      z-index: 1;
     }
 
     .image-block.merch-large img {
@@ -392,7 +398,8 @@ Design goal:
       }
       .image-block.merch-large {
         width: 100%;
-        margin-left: 0;
+        transform: none;
+        margin: 0;
       }
     }
   </style>
@@ -406,18 +413,18 @@ Design goal:
 
     <div id="tabs">
       <div class="tab-row top-row">
-        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
-        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
-        <a href="javascript:void(0)" onclick="return false;" class="organic-tab">Superior Exotics Organic</a>
-        <a href="javascript:void(0)" onclick="return false;">Superior Exotics X</a>
-      </div>
-      <div class="tab-row bottom-row">
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 1</a>
         <span class="active">Superior Exotics 2</span>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 3</a>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 4</a>
+      </div>
+      <div class="tab-row bottom-row">
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 5</a>
         <a href="javascript:void(0)" onclick="return false;">Superior Exotics 6</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 7</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics 8</a>
+        <a href="javascript:void(0)" onclick="return false;" class="organic-tab">Superior Exotics Organic</a>
+        <a href="javascript:void(0)" onclick="return false;">Superior Exotics X</a>
       </div>
     </div>
 
