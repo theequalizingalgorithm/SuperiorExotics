@@ -69,16 +69,15 @@ Design goal:
 
     #tabs {
       margin-bottom: 40px;
-      padding: 7px 10px 8px;
+      padding: 8px 10px 9px;
       text-align: center;
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(5, max-content);
       justify-content: center;
-      gap: 10px;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      background: rgba(0, 0, 0, 0.58);
-      border-top: 1px solid rgba(255, 255, 255, 0.18);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+      gap: 6px 8px;
+      overflow-x: hidden;
+      background: rgba(0, 0, 0, 0.78);
+      border: 1px solid #ffdd00;
       max-width: 100%;
     }
 
@@ -86,32 +85,35 @@ Design goal:
     #tabs span {
       display: inline-block;
       margin: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: #fff7bf;
-      font: bold 11px "Arial", sans-serif;
-      text-decoration: underline;
+      padding: 4px 6px;
+      border: 1px solid #ffdd00;
+      background: rgba(0, 0, 0, 0.9);
+      color: #fff17a;
+      font: bold 11px "Courier New", monospace;
+      text-decoration: none;
       letter-spacing: 0.1px;
       cursor: default;
       white-space: nowrap;
       flex-shrink: 0;
-      text-shadow: 1px 1px 0 #000, 0 0 5px #000;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
+      text-transform: uppercase;
     }
 
     #tabs span.active {
-      background: transparent;
-      color: #39ff14;
+      background: #ff3333;
+      color: #fff17a;
       font-weight: bold;
-      text-shadow: 1px 1px 0 #002b08, 0 0 6px #000;
+      border-color: #ffdd00;
+      text-shadow: 1px 1px 0 #000, 0 0 4px #000;
     }
 
     #tabs a {
-      color: #fff7bf;
+      color: #fff17a;
     }
 
     #tabs a:hover {
       color: #ffffff;
+      background: rgba(20, 20, 20, 0.95);
     }
 
     /* Collage layout: left, center, right columns */
@@ -168,6 +170,31 @@ Design goal:
       width: 70%;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    .bottom-showcase {
+      width: 100%;
+      margin: 56px auto 0;
+      text-align: center;
+    }
+
+    .bottom-vape-feature {
+      width: 60%;
+      margin: 0 auto 34px;
+    }
+
+    .bottom-vape-feature img {
+      width: 100%;
+    }
+
+    .bottom-ape-feature {
+      width: 24%;
+      margin: 0 auto;
+    }
+
+    .bottom-ape-feature img {
+      width: 100%;
+      background: transparent;
     }
 
     .image-caption {
@@ -267,12 +294,29 @@ Design goal:
     }
 
     @media (max-width: 1100px) {
+      #tabs {
+        grid-template-columns: repeat(5, max-content);
+        gap: 5px 5px;
+      }
+
+      #tabs a,
+      #tabs span {
+        font-size: 9px;
+        padding: 3px 4px;
+      }
+
       #collage {
         grid-template-columns: 1fr;
         gap: 20px;
       }
       .left-column, .right-column, .center-column {
         gap: 20px;
+      }
+      .bottom-vape-feature {
+        width: 90%;
+      }
+      .bottom-ape-feature {
+        width: 45%;
       }
     }
   </style>
@@ -305,7 +349,7 @@ Design goal:
           <a href="detail.html?img=Website%20Assets/junghwan-pocari-sweat.gif&title=Pocari%20Sweat%20Gift%20of%20Junghwan">
             <img src="Website Assets/junghwan-pocari-sweat.gif" alt="Pocari Sweat Gift of Junghwan" />
           </a>
-          <div class="image-caption">Pocari Sweat Gift of Junghwan</div>
+          <div class="image-caption">Pocari Sweat</div>
         </div>
 
         <div class="image-block">
@@ -333,20 +377,22 @@ Design goal:
           </a>
           <div class="image-caption">Vape</div>
         </div>
+      </div>
+    </div>
 
-        <div class="image-block">
-          <a href="detail.html?img=Website%20Assets/How-to-Dispose-of-Vapes.gif&title=How-to">
-            <img src="Website Assets/How-to-Dispose-of-Vapes.gif" alt="How-to" />
-          </a>
-          <div class="image-caption">How-to</div>
-        </div>
+    <div class="bottom-showcase">
+      <div class="image-block bottom-vape-feature">
+        <a href="detail.html?img=Website%20Assets/How-to-Dispose-of-Vapes.gif&title=Premium%20Flavored%20Vapes">
+          <img src="Website Assets/How-to-Dispose-of-Vapes.gif" alt="Premium Flavored Vapes" />
+        </a>
+        <div class="image-caption">Premium Flavored Vapes</div>
+      </div>
 
-        <div class="image-block ape-small">
-          <a href="detail.html?img=Website%20Assets/ezgif.com-gif-maker.gif&title=ezgift.com">
-            <img src="Website Assets/ezgif.com-gif-maker.gif" alt="ezgift.com" />
-          </a>
-          <div class="image-caption">Bored Ape for Sale</div>
-        </div>
+      <div class="image-block bottom-ape-feature">
+        <a href="detail.html?img=Website%20Assets/ezgif.com-gif-maker.gif&title=ezgift.com">
+          <img src="Website Assets/ezgif.com-gif-maker.gif" alt="Bored Ape for Sale" />
+        </a>
+        <div class="image-caption">Bored Ape for Sale</div>
       </div>
     </div>
 
